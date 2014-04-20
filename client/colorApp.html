@@ -1,0 +1,167 @@
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  	<title>Less Colors</title>
+  	<style type="text/less">
+
+		@complementary1: black;
+		.complementary1 { background-color: @complementary1; }
+	    @complementary2: black;
+	    .complementary2 { background-color: @complementary2; }
+	    @complementary3: black;
+	    .complementary3 { background-color: @complementary3; }
+	    @complementary4: black;
+	    .complementary4 { background-color: @complementary4; }
+	    @triad1: black;
+	    .triad1 { background-color: @triad1; }
+	    @triad2: black;
+	    .triad2 { background-color: @triad2; }
+	    @triad3: black;
+	    .triad3 { background-color: @triad3; }
+	    @triad4: black;
+	    .triad4 { background-color: @triad4; }
+	    @mono1: black;
+	    .mono1 { background-color: @mono1; }
+	    @mono2: black;
+	    .mono2 { background-color: @mono2; }
+	    @mono3: black;
+	    .mono3 { background-color: @mono3; }
+	    @mono4: black;
+	    .mono4 { background-color: @mono4; }
+	    @analogous1: black;
+	    .analogous1 { background-color: @analogous1; }
+	    @analogous2: black;
+	    .analogous2 { background-color: @analogous2; }
+	    @analogous3: black;
+	    .analogous3 { background-color: @analogous3; }
+	    @analogous4: black;
+	    .analogous4 { background-color: @analogous4; }	    
+	</style>
+</head>
+
+<body>
+    <!-- Wrap all page content here -->
+    <div id="wrap" class="dark">
+      	<!-- Begin page content -->
+		<div class="container">
+        	{{> colorinput}}
+		</div>
+    </div>
+    <div id="footer">
+		<div class="container" class="col-lg-10">
+			<p class="pull-right text-muted"><a href="#" id="goDark">Night</a> / <a href="#" id="goLight">Day</a></p>
+			<p class="text-muted credit">Made at <a href="http://www.parthenonsoftwaregroup.com">Parthenon Software Group</a></p>
+		</div>
+	</div>
+</body>
+
+<template name="colorinput">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+            <h1>LESS Colors</h1>
+        </div>
+        {{#constant}}
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+            <div class="circlewrapper">
+                <div class="circle green"></div>
+                <div class="circle red"></div>
+                <div class="circle blue"></div>
+            </div>                
+        </div>
+        {{/constant}}
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="lead">Generate color themes as LESS color functions.</p>
+            <div class="hr"></div>
+        </div>
+    </div>
+	<div class="row middle_row">
+		<div class="col-lg-5 inputsection col-md-5">
+            <span class="clear">Input a color: <input type="text" id="colorinput" maxlength="6" placeholder="HEX"/></span>
+			{{#constant}}
+			<span>Hue:</span>
+			<div id="hueSlider"></div>
+			<span>Sat:</span>
+			<div id="satSlider"></div>
+			<span>Light:</span>
+			<div id="lightSlider"></div>
+			{{/constant}}
+            <p>Hex: <span class="plaintext">#{{ maincolorHEX }}</span>
+                Hue: <span class="plaintext">{{ maincolorHUE }}</span>
+                Sat: <span class="plaintext">{{ maincolorSAT }}</span>
+                Light: <span class="plaintext">{{ maincolorLIGHT }}</span></p>
+            <div class="hr"></div>
+        </div>
+	  	<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <span class="clear">Your Base Color:</span>
+            <div class="color_cell main" style="background-color: #{{ maincolorHEX }};"><span>#{{ maincolorHEX }}</span></div>
+            <div class="hr"></div>
+		</div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 code">     
+            <span class="clear">Your Less Code:</span>
+            {{#constant}}<textarea class="lesscode_area"></textarea>{{/constant}}
+            <div class="hr"></div>
+        </div>
+	</div>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <span class="clear">Select a color scheme:</span>
+            <select id="colorscheme">
+              <option selected value="none">None</option>
+              <option value="analogous">Analogous</option>
+              <option value="monochromatic">Monochromatic</option>
+              <option value="triad">Triad</option>
+              <option value="complementary">Complementary</option>
+            </select>
+        </div>
+        {{#constant}}
+        <div class="col-lg-7 color_row complementary">
+            <span class="clear">Your Complementary color is:</span>
+            <div class="color_row_cells">
+                <div class="color_cell complementary1"><span>#123456</span></div>
+                <div class="color_cell complementary2"><span>#123456</span></div>
+                <div class="color_cell complementary3"><span>#123456</span></div>
+                <div class="color_cell complementary4"><span>#123456</span></div>
+            </div>
+        </div>
+        <div class="col-lg-7 color_row triad">
+            <span class="clear">Triad colors are:</span>
+            <div class="color_row_cells">            
+                <div class="color_cell triad1"><span>#123456</span></div>
+                <div class="color_cell triad2"><span>#123456</span></div>
+                <div class="color_cell triad3"><span>#123456</span></div>
+                <div class="color_cell triad4"><span>#123456</span></div>
+            </div>
+        </div>
+        <div class="col-lg-7 color_row mono">
+            <span class="clear">Monochromatic colors are:</span>
+            <div class="color_row_cells">  
+                <div class="color_cell mono1"><span>#123456</span></div>
+                <div class="color_cell mono2"><span>#123456</span></div>
+                <div class="color_cell mono3"><span>#123456</span></div>
+                <div class="color_cell mono4"><span>#123456</span></div>
+            </div>
+        </div>
+        <div class="col-lg-7 color_row analogous">
+            <span class="clear">Analogous colors are:</span>
+            <div class="color_row_cells">              
+                <div class="color_cell analogous1"><span>#123456</span></div>
+                <div class="color_cell analogous2"><span>#123456</span></div>
+                <div class="color_cell analogous3"><span>#123456</span></div>
+                <div class="color_cell analogous4"><span>#123456</span></div>
+            </div>
+        </div>
+        {{/constant}}        
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 codebottom">  
+            <div class="hr"></div>   
+            <span class="clear">Your Less Code:</span>
+            {{#constant}}<textarea class="lesscode_area"></textarea>{{/constant}}
+        </div>
+    </div>
+</template>

@@ -1,0 +1,50 @@
+/*removing some bootstrap styles */
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: underline;
+	background-color: inherit;
+}
+
+/* adding color classes */
+.basecolor, .hoverbase:hover { 
+	color: @basecolor;
+}
+.baseback { 
+	background-color: @basecolor;
+	border-color: @basecolor;
+}
+
+.color1, .hover1:hover { 
+	color: @color1;
+}
+.back1 { 
+	background-color: @color1;
+	border-color: @color1;
+}
+.color2 { 
+	color: @color2;
+}
+.back2, .hoverback2:hover { 
+	background-color: @color2;
+	border-color: @color2;
+}
+.color3, .hover3:hover { 
+	color: @color3;
+}
+.back3 { 
+	background-color: @color3;
+	border-color: @color3;
+}
+.color4 {
+	color: @color4;
+}
+.back4, .hoverback4:hover  {
+	background-color: @color4;
+	border-color: @color4;
+}
+
+/* Complementary Colors */
+@basecolor: #79b069;
+@color1: spin(@basecolor, 180);
+@color2: darken(spin(@basecolor, 180), 30);
+@color3: saturate(@basecolor, 20);
+@color4: darken(@basecolor, 30);

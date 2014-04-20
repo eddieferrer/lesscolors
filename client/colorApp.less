@@ -1,0 +1,326 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+/* Colors */
+@gray:  #666;
+@lightgray: #ddd;
+@white: #dedede;
+
+/* link focus outline reset */
+a:focus {
+   outline: 0;
+}
+
+/*Gridlover Font Grid */
+body {
+    font-size: 16px;
+    line-height: 1.50000em;
+}
+article {
+    max-width: 944px;
+    margin: auto;
+}
+h1{
+    font-size: 6.87500em;
+    line-height: 1.09091em;
+    margin-top: 0.2182em;
+    /*margin-bottom: 0.4364em;*/
+}
+h2 {
+    font-size: 2.62500em;
+    line-height: 1.14286em;
+    margin-top: 1.1429em;
+    margin-bottom: 0.5714em;
+}
+h3 {
+    font-size: 1.62500em;
+    line-height: 1.84615em;
+    margin-top: 0.9231em;
+    margin-bottom: 0em;
+}
+p, ul {
+    margin-top: 0em;
+    margin-bottom: 1.5em;
+}
+small, aside {
+    font-size: 0.62500em;
+}
+
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+h1, h2, h3, .lead, p, span { 
+    font-family: 'Raleway', sans-serif;
+}
+p, span { letter-spacing: .12em; }
+
+input, textarea, .plaintext { 
+    font-family: arial, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#colorinput { width: 90px; }
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 60px;
+
+    background: url(/images/debut_light.png);
+    color: @gray;
+    .lesscode_area, input, select { 
+        border-radius: 4px; 
+        border: 1px solid @lightgray;
+        padding: 4px;
+        color: @gray;
+    }
+    /* Styling the select */
+    select {
+        margin: 0;
+        color:#888;
+        outline:none;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+        cursor:pointer;
+        margin-bottom: 4px;
+    }
+}
+
+#wrap.dark { 
+    background: url(/images/debut_dark.png);
+    color: @white;
+    .lesscode_area { 
+        border: 1px solid @white; 
+    }
+}
+.clear { clear: both; display: inline-block; width: 100%; margin-bottom: 8px;}
+.sliderwrapper { padding: 0px 6px; }
+.color_cell { 
+    float: right;
+    height: 163px; 
+    width: 25%;
+    display: block;
+    position: relative;
+    &.main { 
+        height: 200px;
+        display: block; 
+        width: 100%; 
+        border-radius: 4px;
+        clear: both;
+        border: 6px solid rgb(231, 231, 231);
+        border: 6px solid rgba(231, 231, 231, .35);
+        -webkit-background-clip: padding-box; /* for Safari */
+        background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */        
+    }
+    span {
+        text-align: center;
+        vertical-align: middle;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        height: 25px;
+        width: 50%;
+        background-color: black;
+        opacity: .4;
+        border-radius: 4px;
+        display: none;
+    }
+    &:hover span { display: block;}
+}
+
+
+.ui-slider { margin: 8px 0px;}
+.lesscode_area { 
+    width: 100%; 
+    height: 200px;
+    resize: none;
+    font-size: 14px;
+}
+
+.hr { margin-top: 1em; border-bottom: 1px solid #eeeeee; margin-bottom: 1em; clear: both; }
+.color_row { 
+    display: none; 
+    .color_row_cells { 
+        overflow: hidden;
+        display: block;
+        border-radius: 4px;
+        border: 6px solid rgb(231, 231, 231);
+        border: 6px solid rgba(231, 231, 231, .35);
+        -webkit-background-clip: padding-box; /* for Safari */
+        background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */ 
+    }
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+    font-size: .85em;
+    background-color: @white;
+    padding: 4px;
+    margin-top: 20px;
+    p { margin-bottom: 0px;}
+}
+
+
+.row.middle_row > div { 
+    min-height: 268px;
+    position: relative;
+    .hr { 
+        
+        position: absolute;
+        bottom: 0;
+        /*height: 22px;*/
+        left: 15px;
+        right: 15px;
+    }
+}
+.codebottom { display: none; }
+
+.circlewrapper {
+    width: 190px;
+    height: 145px;
+    font-size: 6.87500em;
+    margin-top: 0.2182em;
+    float: right;
+    .circle {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px; 
+        border: 6px solid @lightgray;
+        opacity: 0.4;
+        position: relative;
+
+        &.red { 
+            animation: bounce 1.7s;
+            -webkit-animation: bounce 1.7s; /* Safari and Chrome */        
+            background-color: red;
+            float: right;
+            right: -90px;
+        }
+        &.green { 
+            animation: bounce 1.7s;
+            -webkit-animation: bounce 1.7s; /* Safari and Chrome */        
+            background-color: green;
+            float: right;
+            top: 50px;
+        }
+        &.blue { 
+            animation: bounce 1.7s;
+            -webkit-animation: bounce 1.7s; /* Safari and Chrome */
+            background-color: blue;
+            float: right;
+            right: 42px;
+            top: -65px;
+        }
+    }
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {padding-right:18px}
+}
+
+
+/* Animations */
+@keyframes bounce
+{
+    0% {
+        -webkit-transform: scale(.7);
+        -moz-transform: scale(.7);
+        -o-transform: scale(.7);
+        -ms-transform: scale(.7);
+        transform: scale(.7);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes bounce /* Safari and Chrome */
+{
+    0% {
+        -webkit-transform: scale(.6);
+        -moz-transform: scale(.6);
+        -o-transform: scale(.6);
+        -ms-transform: scale(.6);
+        transform: scale(.6);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+@media (max-width: 993px) {
+    .row.middle_row > div { 
+        min-height: 1px;
+    }
+    .row.middle_row > div .hr {
+        left: auto;
+        right: auto;
+        bottom: auto;
+        position: relative;
+    }
+    .color_cell.main {
+        /*height: 163px;*/
+        float: none;
+    }
+}
+@media (max-width: 767px) {
+    body { font-size: 13px;}
+    h1 { font-size: 5.4em;}
+    .circle {
+        width: 50%;
+        height: 50%; 
+        border: 3px solid @lightgray;
+        &.red { 
+            right: 0px;
+        }
+        &.green { 
+            top: 72px;
+        }
+        &.blue { 
+            right: 23px;
+            top: -30px;
+        }        
+    }
+    .color_cell { 
+        width: 50%;
+    }
+ }
+ @media (max-width: 560px) {
+    .col-xs-6 { width: 100%; }
+    .code { display: none; }
+    .codebottom { display: inline-block; margin-top: 1em; float: none; }
+ }
